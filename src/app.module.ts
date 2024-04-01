@@ -10,6 +10,7 @@ import { AiPromptModule } from './ai_prompt/ai_prompt.module';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { JwtModule } from '@nestjs/jwt';
     AiPromptModule,
     AuthModule,
     JwtModule,
+    HttpModule,
   ],
   controllers: [AppController, AiPromptController],
   providers: [AppService, AiPromptService, AuthService],

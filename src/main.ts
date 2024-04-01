@@ -12,7 +12,6 @@ async function bootstrap() {
       whitelist: true,
     }),
   ); // Enable global pipes for all routes
-  
   await app.listen(8000);
 }
 bootstrap();
