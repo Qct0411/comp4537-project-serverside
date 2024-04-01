@@ -7,6 +7,9 @@ import { DatabaseModule } from './libs/database.module';
 import { AiPromptController } from './ai_prompt/ai_prompt.controller';
 import { AiPromptService } from './ai_prompt/ai_prompt.service';
 import { AiPromptModule } from './ai_prompt/ai_prompt.module';
+import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -16,8 +19,10 @@ import { AiPromptModule } from './ai_prompt/ai_prompt.module';
     DatabaseModule,
     UserModule,
     AiPromptModule,
+    AuthModule,
+    JwtModule,
   ],
   controllers: [AppController, AiPromptController],
-  providers: [AppService, AiPromptService],
+  providers: [AppService, AiPromptService, AuthService],
 })
 export class AppModule {}
